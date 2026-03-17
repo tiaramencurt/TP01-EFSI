@@ -12,7 +12,7 @@ function ej3() {
     document.getElementById("r3").innerHTML =
         maximo(5, 9, 3);
 }
-//CORREGIR
+
 function ej4() {
     document.getElementById("r4").innerHTML =
         validarPassword("abc12345");
@@ -77,10 +77,18 @@ function ej11() {
     document.getElementById("r11").innerHTML =
         soloNombres(usuarios);
 }
-//CORREGIR
+
 function ej12() {
-    document.getElementById("r12").innerHTML =
-        soloMayores(usuarios);
+
+    let lista = soloMayores(usuarios);
+
+    let texto = "";
+
+    for (let i = 0; i < lista.length; i++) {
+        texto = texto + lista[i].nombre + " - " + lista[i].edad + "<br>";
+    }
+
+    document.getElementById("r12").innerHTML = texto;
 }
 
 function ej13() {
@@ -98,27 +106,82 @@ function ej14() {
     document.getElementById("r14").innerHTML =
         desestructurar(producto);
 }
-//CORREGIR
 function ej15() {
+
+    let copia = copiaProducto(producto);
+
     document.getElementById("r15").innerHTML =
-        copiaProducto(producto);
+        copia.nombre + " - " + copia.precio + " - stock: " + copia.stock;
+
 }
 let productos = [
     { nombre: "Mouse", precio: 40 },
     { nombre: "Monitor", precio: 200 }
 ];
-//CORREGIR
 function ej16() {
-    document.getElementById("r16").innerHTML =
-        buscarProducto(productos, "Monitor");
+
+    let prod = buscarProducto(productos, "Monitor");
+
+    if (prod == null) {
+        document.getElementById("r16").innerHTML = "No encontrado";
+    }
+    else {
+        document.getElementById("r16").innerHTML =
+            prod.nombre + " - " + prod.precio;
+    }
+
 }
-//CORREGIR
+
 function ej17() {
-    document.getElementById("r17").innerHTML =
-        productosCaros(productos);
+
+    let lista = productosCaros(productos);
+
+    let texto = "";
+
+    for (let i = 0; i < lista.length; i++) {
+        texto = texto + lista[i].nombre + " - " + lista[i].precio + "<br>";
+    }
+
+    document.getElementById("r17").innerHTML = texto;
+
 }
 
 function ej18() {
     document.getElementById("r18").innerHTML =
         promedio([10, 20, 30]);
+}
+
+//Desafio
+function ej19() {
+    let lista = obtenerUsuarios();
+    let texto = "";
+    for (let i = 0; i < lista.length; i++) {
+        texto = texto + lista[i].id + " - " + lista[i].nombre + " - " + lista[i].edad + "<br>";
+    }
+    document.getElementById("r19").innerHTML = texto;
+}
+
+function ej20() {
+    let usuario = obtenerUsuarioPorId(2);
+    if (usuario == null) {
+        document.getElementById("r20").innerHTML = "No encontrado";
+    }
+    else {
+        document.getElementById("r20").innerHTML =
+            usuario.id + " - " + usuario.nombre + " - " + usuario.edad;
+    }
+}
+
+function ej21() {
+    let lista = obtenerMayores();
+    let texto = "";
+    for (let i = 0; i < lista.length; i++) {
+        texto = texto + lista[i].nombre + " - " + lista[i].edad + "<br>";
+    }
+    document.getElementById("r21").innerHTML = texto;
+}
+
+function ej22() {
+    let nuevo = crearUsuario("Luis", 22);
+    document.getElementById("r22").innerHTML = "Usuario creado: " + nuevo.nombre + " - " + nuevo.edad;
 }

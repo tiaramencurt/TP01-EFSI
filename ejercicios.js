@@ -1,16 +1,16 @@
 //PARTE 1
 // Ej 1
-function formatearNombre(nombre){
+function formatearNombre(nombre) {
     let primera = nombre[0].toUpperCase();
     let resto = nombre.substring(1).toLowerCase();
     return primera + resto;
 }
 
 // Ej2
-function contarLetras(texto){
+function contarLetras(texto) {
     let contador = 0;
-    for(let i = 0; i < texto.length; i++){
-        if(texto[i] != " "){
+    for (let i = 0; i < texto.length; i++) {
+        if (texto[i] != " ") {
             contador++;
         }
     }
@@ -18,27 +18,27 @@ function contarLetras(texto){
 }
 
 // Ej 3
-function maximo(a,b,c){
+function maximo(a, b, c) {
     let mayor = a;
-    if(b > mayor){
+    if (b > mayor) {
         mayor = b;
     }
-    if(c > mayor){
+    if (c > mayor) {
         mayor = c;
     }
     return mayor;
 }
 
 // Ej 4
-function validarPassword(password){
+function validarPassword(password) {
 
-    if(password.length < 8){
+    if (password.length < 8) {
         return false;
     }
     let tieneNumero = false;
-    for(let i=0;i<password.length;i++){
-        if(typeof Number(password[i]) === "number" && password[i] != " "){
-            if(!isNaN(password[i])){
+    for (let i = 0; i < password.length; i++) {
+        if (typeof Number(password[i]) === "number" && password[i] != " ") {
+            if (!isNaN(password[i])) {
                 tieneNumero = true;
             }
         }
@@ -48,19 +48,19 @@ function validarPassword(password){
 
 //PARTE 2
 // Ej 5
-function sumarArray(numeros){
+function sumarArray(numeros) {
     let suma = 0;
-    for(let i=0;i<numeros.length;i++){
+    for (let i = 0; i < numeros.length; i++) {
         suma = suma + numeros[i];
     }
     return suma;
 }
 
 // Ej 6
-function mayorNumero(numeros){
+function mayorNumero(numeros) {
     let mayor = numeros[0];
-    for(let i=0;i<numeros.length;i++){
-        if(numeros[i] > mayor){
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] > mayor) {
             mayor = numeros[i];
         }
     }
@@ -68,10 +68,10 @@ function mayorNumero(numeros){
 }
 
 // Ej 7
-function obtenerPares(numeros){
+function obtenerPares(numeros) {
     let pares = [];
-    for(let i=0;i<numeros.length;i++){
-        if(numeros[i] % 2 == 0){
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 == 0) {
             pares.push(numeros[i]);
         }
     }
@@ -80,20 +80,20 @@ function obtenerPares(numeros){
 
 //PARTE 3
 // Ej 8
-function descripcionUsuario(usuario){
+function descripcionUsuario(usuario) {
     return usuario.nombre + " tiene " + usuario.edad + " años";
 }
 
 // Ej 9
-function activarUsuario(usuario){
+function activarUsuario(usuario) {
     usuario.activo = true;
     return usuario;
 }
 
 // Ej 10
-function precioTotal(productos){
+function precioTotal(productos) {
     let total = 0;
-    for(let i=0;i<productos.length;i++){
+    for (let i = 0; i < productos.length; i++) {
         total = total + productos[i].precio;
     }
     return total;
@@ -101,19 +101,19 @@ function precioTotal(productos){
 
 //PARTE 4
 // Ej 11
-function soloNombres(usuarios){
+function soloNombres(usuarios) {
     let nombres = [];
-    for(let i=0;i<usuarios.length;i++){
+    for (let i = 0; i < usuarios.length; i++) {
         nombres.push(usuarios[i].nombre);
     }
     return nombres;
 }
 
 // Ej 12
-function soloMayores(usuarios){
+function soloMayores(usuarios) {
     let mayores = [];
-    for(let i=0;i<usuarios.length;i++){
-        if(usuarios[i].edad >= 18){
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].edad >= 18) {
             mayores.push(usuarios[i]);
         }
     }
@@ -121,9 +121,9 @@ function soloMayores(usuarios){
 }
 
 // Ej 13
-function sumarEdades(usuarios){
+function sumarEdades(usuarios) {
     let suma = 0;
-    for(let i=0;i<usuarios.length;i++){
+    for (let i = 0; i < usuarios.length; i++) {
         suma = suma + usuarios[i].edad;
     }
     return suma;
@@ -131,27 +131,27 @@ function sumarEdades(usuarios){
 
 //PARTE 5
 // Ej 14
-function desestructurar(producto){
+function desestructurar(producto) {
     let nombre = producto.nombre;
     let precio = producto.precio;
-return "El producto se llama " + nombre + " y cuesta " + precio + ".";
+    return "El producto se llama " + nombre + " y cuesta " + precio + ".";
 }
 
 // Ej 15
-function copiaProducto(producto){
+function copiaProducto(producto) {
     let productoNuevo = {
         nombre: producto.nombre,
         precio: producto.precio,
-        stock:5
+        stock: 5
     };
     return productoNuevo;
 }
 
 //PARTE 6
 // Ej 16
-function buscarProducto(productos,nombre){
-    for(let i=0;i<productos.length;i++){
-        if(productos[i].nombre == nombre){
+function buscarProducto(productos, nombre) {
+    for (let i = 0; i < productos.length; i++) {
+        if (productos[i].nombre == nombre) {
             return productos[i];
         }
     }
@@ -159,10 +159,10 @@ function buscarProducto(productos,nombre){
 }
 
 // Ej 17
-function productosCaros(productos){
+function productosCaros(productos) {
     let caros = [];
-    for(let i=0;i<productos.length;i++){
-        if(productos[i].precio > 50){
+    for (let i = 0; i < productos.length; i++) {
+        if (productos[i].precio > 50) {
             caros.push(productos[i]);
         }
     }
@@ -170,10 +170,51 @@ function productosCaros(productos){
 }
 
 // Ej 18
-function promedio(numeros){
+function promedio(numeros) {
     let suma = 0;
-    for(let i=0;i<numeros.length;i++){
+    for (let i = 0; i < numeros.length; i++) {
         suma = suma + numeros[i];
     }
     return suma / numeros.length;
+}
+
+// Desafio Final
+const usuariosDesafio = [
+    { id: 1, nombre: "Ana", edad: 20 },
+    { id: 2, nombre: "Juan", edad: 15 },
+    { id: 3, nombre: "Pedro", edad: 30 }
+]
+
+function obtenerUsuarios() {
+    return usuariosDesafio;
+}
+
+function obtenerUsuarioPorId(id) {
+    for (let i = 0; i < usuariosDesafio.length; i++) {
+        if (usuariosDesafio[i].id == id) {
+            return usuariosDesafio[i];
+        }
+    }
+    return null;
+}
+
+function obtenerMayores() {
+    let mayores = [];
+    for (let i = 0; i < usuariosDesafio.length; i++) {
+        if (usuariosDesafio[i].edad >= 18) {
+            mayores.push(usuariosDesafio[i]);
+        }
+    }
+    return mayores;
+}
+
+function crearUsuario(nombre, edad) {
+    let nuevoId = usuariosDesafio.length + 1;
+    let nuevoUsuario = {
+        id: nuevoId,
+        nombre: nombre,
+        edad: edad
+    };
+    usuariosDesafio.push(nuevoUsuario);
+    return nuevoUsuario;
 }
